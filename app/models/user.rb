@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :uid
 
   def self.create_with_omniauth(auth)
-    create!(uid: auth["uid"], name: auth["info"]["name"], key: auth.credentials.token, secret: auth.credentials.secret)
+    create!(uid: auth["uid"], name: auth["info"]["nickname"], key: auth.credentials.token, secret: auth.credentials.secret)
   end
 
 
