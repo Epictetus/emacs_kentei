@@ -1,4 +1,5 @@
 <% content_for :title, "#{@user.name} さん" %>
-
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.name %> さんのページ</h1>
+<%= link_to 'Twitter', "https://twitter.com/#!/#{@user.name}" %>
+TODO: 解いた問題
+TODO: 作成した問題
