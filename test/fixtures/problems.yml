@@ -1,17 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  title: MyString
-  description: MyText
-  correct: MyString
-  wrong1: MyString
-  wrong2: MyString
-  wrong3: MyString
-
-two:
-  title: MyString
-  description: MyText
-  correct: MyString
-  wrong1: MyString
-  wrong2: MyString
-  wrong3: MyString
+<% 1.upto(1000) do |i| %>
+problem_<%= i %>:
+  id: <%= i %>
+  title: Problem <%= i %>
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lectus turpis, pellentesque ullamcorper mattis eget, consectetur cursus justo. Donec luctus ultrices orci et aliquam. Pellentesque accumsan ante eu est pharetra nec semper purus gravida. In erat elit, fermentum nec dignissim at, ornare ut lorem. Maecenas blandit, risus quis posuere accumsan, purus ipsum fermentum ipsum, vel sagittis sapien dui ac tellus. Suspendisse ornare adipiscing accumsan. Nam semper dictum dictum. Phasellus elit tellus, tempus id porta vel,
+  correct: Correct Answer
+  wrong1: Wrong Answer 1
+  wrong2: Wrong Answer 2
+  wrong3: Wrong Answer 3
+<% end %>
