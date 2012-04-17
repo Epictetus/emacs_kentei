@@ -34,6 +34,14 @@
               <li><%= link_to "問題一覧", controller: 'problems' %></li>
               <li><%= link_to "ランキング", controller: 'users', action: 'ranking' %></li>
             </ul>
+            <p class="navbar-text pull-right">
+              <% if current_user %>
+                Welcome <%= current_user.name %>!&nbsp;
+                <%= link_to "Sign Out", signout_path %>
+              <% else %>
+                <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+              <% end %>
+            </p>
           </div><!--/.nav-collapse -->
         </div>
       </div>
