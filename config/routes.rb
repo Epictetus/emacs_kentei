@@ -3,6 +3,7 @@ EmacsKentei::Application.routes.draw do
   get "welcome/newbie"
 
   resources :problems
+  resources :users
 
   # omniauth twitter
   match "/auth/:provider/callback" => "sessions#create"
