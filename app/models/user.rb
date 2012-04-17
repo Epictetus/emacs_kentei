@@ -1,14 +1,11 @@
 class User < ActiveRecord::Base
-  attr_reader :name, :uid
+  attr_accessible :uid, :name, :key, :secret
 
   validates_presence_of :uid, :name, :key, :secret
+  validates_uniqueness_of :uid
 
   def self.create_with_omniauth(auth)
-    create! do |user|
-      p auth
-      user.uid = auth["uid"]
-      user.name = auth["info"]["name"]
-    end
+    create!(uid: auth["uid"], name: auth["info"]["name"], key: auth.credentials.token, secret: auth.credentials.secret)
   end
 
 
