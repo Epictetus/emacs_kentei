@@ -1,5 +1,7 @@
 EmacsKentei::Application.routes.draw do
 
+  get "welcome/newbie"
+
   resources :problems
 
   # omniauth twitter
