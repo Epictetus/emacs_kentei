@@ -1,14 +1,11 @@
-<h1>Listing problems</h1>
+<h1>問題一覧</h1>
 
-<table>
+<%= will_paginate @problems, class: "pagination pagination-centered" %>
+
+<table class="table table-bordered table-striped">
   <tr>
     <th>Title</th>
     <th>Description</th>
-    <th>Correct</th>
-    <th>Wrong1</th>
-    <th>Wrong2</th>
-    <th>Wrong3</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -16,19 +13,11 @@
 <% @problems.each do |problem| %>
   <tr>
     <td><%= problem.title %></td>
-    <td><%= problem.description %></td>
-    <td><%= problem.correct %></td>
-    <td><%= problem.wrong1 %></td>
-    <td><%= problem.wrong2 %></td>
-    <td><%= problem.wrong3 %></td>
+    <td><%= problem.description[0..50] %></td>
     <td><%= link_to 'Show', problem %></td>
     <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
-    <td><%= link_to 'Destroy', problem, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <%= will_paginate @problems, class: "pagination pagination-centered" %>
-<br />
-
-<%= link_to 'New Problem', new_problem_path %>
