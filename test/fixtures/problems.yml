@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-<% 1.upto(1000) do |i| %>
+<% 1.upto(100) do |i| %>
 problem_<%= i %>:
   id: <%= i %>
   title: Problem <%= i %>
