@@ -28,7 +28,7 @@
 <% end %>
 </table>
 
-<%= will_paginate @problems %>
+<%= will_paginate @problems, class: "pagination pagination-centered" %>
 <br />
 
 <%= link_to 'New Problem', new_problem_path %>
