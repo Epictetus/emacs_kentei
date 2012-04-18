@@ -18,9 +18,8 @@
 <% else %>
   <%= form_tag(action: 'answer') do %>
     <% @problem.random_choices.each do |c| %>
-      <label for="radio inline"><%= radio_button_tag 'choice', c, false, class: 'choice' %><%= c %></label>
+      <label class="radio"><%= radio_button_tag 'choice', c, false, class: 'choice' %><%= c %></label>
     <% end %>
-    <br />
     <%= submit_tag "回答", class: 'btn btn-primary' %>
   <% end %>
 <% end %>
