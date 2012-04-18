@@ -11,6 +11,7 @@ class Problem < ActiveRecord::Base
   end
 
   def answer_by(user, choice)
+    raise "Already answered" if solvers.include?(user)
     answers.create!(user: user, choice: choice, correct: correct == choice)
   end
 end
