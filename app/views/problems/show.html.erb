@@ -1,35 +1,13 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = @problem.class -%>
+<h1><%= @problem.title %></h1>
+
+<p>by. <%= link_to @problem.creator %></p>
 
 <p>
-  <b>Title:</b>
-  <%= @problem.title %>
-</p>
-
-<p>
-  <b>Description:</b>
   <%= @problem.description %>
 </p>
 
-<p>
-  <b>Correct:</b>
-  <%= @problem.correct %>
-</p>
-
-<p>
-  <b>Wrong1:</b>
-  <%= @problem.wrong1 %>
-</p>
-
-<p>
-  <b>Wrong2:</b>
-  <%= @problem.wrong2 %>
-</p>
-
-<p>
-  <b>Wrong3:</b>
-  <%= @problem.wrong3 %>
-</p>
-
-
-<%= link_to 'Edit', edit_problem_path(@problem) %> |
-<%= link_to 'Back', problems_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              problems_path, :class => 'btn'  %>
+</div>

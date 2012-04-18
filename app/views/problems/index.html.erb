@@ -1,23 +1,11 @@
 <h1>問題一覧</h1>
 
+<p>
+  <%= link_to '問題作成', '/problems/new', class: 'btn' if current_user %>
+</p>
+
 <%= will_paginate @problems, class: "pagination pagination-centered" %>
 
-<table class="table table-bordered table-striped">
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @problems.each do |problem| %>
-  <tr>
-    <td><%= problem.title %></td>
-    <td><%= problem.description[0..50] %></td>
-    <td><%= link_to 'Show', problem %></td>
-    <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
-  </tr>
-<% end %>
-</table>
+<%= render partial: 'list' %>
 
 <%= will_paginate @problems, class: "pagination pagination-centered" %>
