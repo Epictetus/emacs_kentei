@@ -40,6 +40,7 @@ class ProblemsController < ApplicationController
   # POST /problems.json
   def create
     @problem = Problem.new(params[:problem])
+    @problem.creator = current_user
 
     respond_to do |format|
       if @problem.save

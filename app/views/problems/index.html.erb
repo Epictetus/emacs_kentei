@@ -1,5 +1,9 @@
 <h1>問題一覧</h1>
 
+<p>
+  <%= link_to '問題作成', '/problems/new', class: 'btn' if current_user %>
+</p>
+
 <%= will_paginate @problems, class: "pagination pagination-centered" %>
 
 <table class="table table-bordered table-striped">
