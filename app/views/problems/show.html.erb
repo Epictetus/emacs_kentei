@@ -1,38 +1,36 @@
+<%- model_class = @problem.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
 <p>
-  <b>Title:</b>
+  <strong><%= model_class.human_attribute_name(:title) %>:</strong><br>
   <%= @problem.title %>
 </p>
-
 <p>
-  <b>作成者:</b>
-  <%= link_to @problem.creator.name, @problem.creator %>
-</p>
-
-<p>
-  <b>Description:</b>
+  <strong><%= model_class.human_attribute_name(:description) %>:</strong><br>
   <%= @problem.description %>
 </p>
-
 <p>
-  <b>Correct:</b>
+  <strong><%= model_class.human_attribute_name(:correct) %>:</strong><br>
   <%= @problem.correct %>
 </p>
-
 <p>
-  <b>Wrong1:</b>
+  <strong><%= model_class.human_attribute_name(:wrong1) %>:</strong><br>
   <%= @problem.wrong1 %>
 </p>
-
 <p>
-  <b>Wrong2:</b>
+  <strong><%= model_class.human_attribute_name(:wrong2) %>:</strong><br>
   <%= @problem.wrong2 %>
 </p>
-
 <p>
-  <b>Wrong3:</b>
+  <strong><%= model_class.human_attribute_name(:wrong3) %>:</strong><br>
   <%= @problem.wrong3 %>
 </p>
+<p>
+  <strong><%= model_class.human_attribute_name(:creator_id) %>:</strong><br>
+  <%= @problem.creator_id %>
+</p>
 
-
-<%= link_to 'Edit', edit_problem_path(@problem) %> |
-<%= link_to 'Back', problems_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              problems_path, :class => 'btn'  %>
+</div>
