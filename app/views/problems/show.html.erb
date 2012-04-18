@@ -3,7 +3,7 @@
 
 <p>by. <%= link_to @problem.creator %></p>
 
-<p><%= @problem.solvers.count %> 人が解きました。</p>
+<p><%= @problem.solvers.count %> 人が解き、<%= @problem.answers.where(correct: true).count %> 人が正解しました。</p>
 
 <p>
   <%= @problem.description %>
