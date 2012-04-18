@@ -8,17 +8,14 @@
 
 <table class="table table-bordered table-striped">
   <tr>
-    <th>Title</th>
+    <th style="width: 30%">Title</th>
     <th>Description</th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @problems.each do |problem| %>
   <tr>
-    <td><%= problem.title %></td>
+    <td><%= link_to problem.title, problem %></td>
     <td><%= problem.description[0..50] %></td>
-    <td><%= link_to 'Show', problem %></td>
   </tr>
 <% end %>
 </table>
