@@ -2,6 +2,6 @@
 <h1><%= @user.name %> さんのページ</h1>
 <%= link_to 'Twitter', "https://twitter.com/#!/#{@user.name}" %>
 <h2>解いた問題</h2>
-TODO
+<%= @problems = @user.answered_problems; render partial: 'problems/list' %>
 <h2>作成した問題</h2>
 <%= @problems = @user.problems; render partial: 'problems/list' %>

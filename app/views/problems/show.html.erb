@@ -3,6 +3,8 @@
 
 <p>by. <%= link_to @problem.creator %></p>
 
+<p><%= @problem.solvers.count %> 人が解きました。</p>
+
 <p>
   <%= @problem.description %>
 </p>
