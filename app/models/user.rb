@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :uid
 
   has_many :problems, foreign_key: :creator_id
+  has_many :answers, :dependent => :destroy
+  has_many :answered_problems, through: :answers, source: :problem
 
   def self.create_with_omniauth(auth)
     create!(uid: auth["uid"], name: auth["info"]["nickname"], key: auth.credentials.token, secret: auth.credentials.secret)

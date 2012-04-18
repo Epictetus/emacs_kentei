@@ -3,4 +3,6 @@ class Problem < ActiveRecord::Base
   self.per_page = 10
 
   belongs_to :creator, class_name: User
+  has_many :answers, :dependent => :destroy
+  has_many :solvers, through: :answers, source: :user
 end
