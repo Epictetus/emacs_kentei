@@ -9,6 +9,17 @@
   <%= @problem.description %>
 </p>
 
+<% if @problem.solvers.include? current_user %>
+<% else %>
+  <%= form_tag(action: 'answer') do %>
+    <% @problem.random_choices.each do |c| %>
+      <label for="radio inline"><%= radio_button_tag 'choice', c, false, class: 'choice' %><%= c %></label>
+    <% end %>
+    <br />
+    <%= submit_tag "回答", class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               problems_path, :class => 'btn'  %>

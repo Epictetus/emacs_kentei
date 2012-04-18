@@ -2,7 +2,12 @@ EmacsKentei::Application.routes.draw do
 
   get "welcome/newbie"
 
-  resources :problems
+  resources :problems do
+    member do
+      post 'answer'
+      get 'solvers'
+    end
+  end
   resources :users
 
   # omniauth twitter
