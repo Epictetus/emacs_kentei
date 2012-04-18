@@ -2,12 +2,14 @@
   <tr>
     <th style="width: 30%">Title</th>
     <th>Description</th>
+    <th>Acc.</th>
   </tr>
 
 <% @problems.each do |problem| %>
   <tr>
     <td><%= link_to problem.title, problem %></td>
     <td><%= problem.description[0..50] %></td>
+    <td><%= decorate_accuracy(problem.accuracy).html_safe %></td>
   </tr>
 <% end %>
 </table>

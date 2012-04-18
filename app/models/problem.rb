@@ -18,4 +18,12 @@ class Problem < ActiveRecord::Base
   def myanswer(user)
     answers.find_by_user_id(user.id) || (raise "Not answered yet")
   end
+
+  def accuracy
+    if answers.count > 0
+      answers.where(correct: true).count / answers.count.to_f * 100
+    else
+      0.0
+    end
+  end
 end
