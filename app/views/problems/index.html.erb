@@ -6,18 +6,6 @@
 
 <%= will_paginate @problems, class: "pagination pagination-centered" %>
 
-<table class="table table-bordered table-striped">
-  <tr>
-    <th style="width: 30%">Title</th>
-    <th>Description</th>
-  </tr>
-
-<% @problems.each do |problem| %>
-  <tr>
-    <td><%= link_to problem.title, problem %></td>
-    <td><%= problem.description[0..50] %></td>
-  </tr>
-<% end %>
-</table>
+<%= render partial: 'list' %>
 
 <%= will_paginate @problems, class: "pagination pagination-centered" %>

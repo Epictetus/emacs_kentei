@@ -1,6 +1,7 @@
 <% content_for :title, "#{@user.name} さん" %>
 <h1><%= @user.name %> さんのページ</h1>
 <%= link_to 'Twitter', "https://twitter.com/#!/#{@user.name}" %>
-TODO: 解いた問題
-TODO: 作成した問題
-<%= @user.problems.count %>
+<h2>解いた問題</h2>
+TODO
+<h2>作成した問題</h2>
+<%= @problems = @user.problems; render partial: 'problems/list' %>
