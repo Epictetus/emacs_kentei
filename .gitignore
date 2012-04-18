@@ -8,6 +8,8 @@
 /.bundle
 /vendor/gems
 
+/.rvmrc
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 

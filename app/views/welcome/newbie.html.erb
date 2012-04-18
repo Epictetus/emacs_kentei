@@ -1,0 +1,13 @@
+<% content_for :title, 'ようこそ' %>
+<h2>Twitter で始めたことをつぶやきましょう!</h2>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://emacs-kentei.heroku.com/" data-text="Emacs 検定 始めました" data-lang="ja" data-size="large" data-related="tomy_kaira">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<h2>問題を解きましょう!</h2>
+<p>まずは問題を解いてみましょう。<br />
+他のユーザが登録した問題がたくさんあります。</p>
+<p>間違えても大丈夫。答えが表示されるので、それをみて勉強してください。</p>
+<%= link_to '問題一覧', '/problems', class: 'btn' %>
+<h2>問題を作りましょう</h2>
+<p>他の問題を見て、雰囲気がわかったら、ぜひ問題を自分で作ってみてください。<br />
+ニッチな問題なら、他の Emacs 上級者にとっても勉強になります。</p>
+<%= link_to '問題を作る', '/problems/new', class: 'btn' %>
