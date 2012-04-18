@@ -9,4 +9,8 @@ class Problem < ActiveRecord::Base
   def random_choices
     [correct, wrong1, wrong2, wrong3].shuffle
   end
+
+  def answer_by(user, choice)
+    answers.create!(user: user, choice: choice, correct: correct == choice)
+  end
 end

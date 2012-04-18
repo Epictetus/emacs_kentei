@@ -30,14 +30,11 @@ class ProblemsController < ApplicationController
   def answer
     @problem = Problem.find(params[:id])
 
+    @problem.answer_by(current_user, params[:choice])
+
     respond_to do |format|
-      if @problem.answer_by(current_user, params[:choice])
-        format.html { redirect_to @problem, notice: 'Answered' }
-        format.json { render json: @problem, status: :answered, location: @problem }
-      else
-        format.html { render action: "show" }
-        format.json { render json: @problem.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to @problem, notice: 'Answered' }
+      format.json { render json: @problem, status: :answered, location: @problem }
     end
   end
 
