@@ -1,33 +1,10 @@
 <%- model_class = @problem.class -%>
-<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+<h1><%= @problem.title %></h1>
+
+<p>by. <%= link_to @problem.creator %></p>
 
 <p>
-  <strong><%= model_class.human_attribute_name(:title) %>:</strong><br>
-  <%= @problem.title %>
-</p>
-<p>
-  <strong><%= model_class.human_attribute_name(:description) %>:</strong><br>
   <%= @problem.description %>
-</p>
-<p>
-  <strong><%= model_class.human_attribute_name(:correct) %>:</strong><br>
-  <%= @problem.correct %>
-</p>
-<p>
-  <strong><%= model_class.human_attribute_name(:wrong1) %>:</strong><br>
-  <%= @problem.wrong1 %>
-</p>
-<p>
-  <strong><%= model_class.human_attribute_name(:wrong2) %>:</strong><br>
-  <%= @problem.wrong2 %>
-</p>
-<p>
-  <strong><%= model_class.human_attribute_name(:wrong3) %>:</strong><br>
-  <%= @problem.wrong3 %>
-</p>
-<p>
-  <strong><%= model_class.human_attribute_name(:creator_id) %>:</strong><br>
-  <%= @problem.creator_id %>
 </p>
 
 <div class="form-actions">

@@ -10,5 +10,9 @@ class User < ActiveRecord::Base
     create!(uid: auth["uid"], name: auth["info"]["nickname"], key: auth.credentials.token, secret: auth.credentials.secret)
   end
 
+  def to_s
+    name
+  end
+
 
 end
