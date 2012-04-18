@@ -10,6 +10,11 @@
 </p>
 
 <% if @problem.solvers.include? current_user %>
+  <% answer = @problem.myanswer(current_user) %>
+  <div class="alert <%= answer.correct? ? 'alert-success' : 'alert-error' %>">
+    あなたの回答: <strong><%= answer.choice %></strong><br />
+    正解: <strong><%= @problem.correct %></strong>
+  </div>
 <% else %>
   <%= form_tag(action: 'answer') do %>
     <% @problem.random_choices.each do |c| %>

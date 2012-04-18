@@ -14,4 +14,8 @@ class Problem < ActiveRecord::Base
     raise "Already answered" if solvers.include?(user)
     answers.create!(user: user, choice: choice, correct: correct == choice)
   end
+
+  def myanswer(user)
+    answers.find_by_user_id(user.id) || (raise "Not answered yet")
+  end
 end
