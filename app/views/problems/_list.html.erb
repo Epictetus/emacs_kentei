@@ -1,8 +1,8 @@
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped problems">
   <tr>
-    <th style="width: 30%">Title</th>
-    <th>Description</th>
-    <th>Acc.</th>
+    <th style="width: 30%"><%= Problem.human_attribute_name(:title) %></th>
+    <th><%= Problem.human_attribute_name(:description) %></th>
+    <th style="white-space:nowrap;"><%= Problem.human_attribute_name(:accuracy) %></th>
     <th style="width: 40px"></th>
   </tr>
 

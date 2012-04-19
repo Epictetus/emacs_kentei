@@ -133,6 +133,7 @@ ja:
       update: 更新する
     links:
       cancel: キャンセル
+      back: 戻る
     titles:
       new: %{model}の新規作成
   number:
@@ -208,6 +209,7 @@ ja:
         wrong1: 間違い選択肢1
         wrong2: 間違い選択肢2
         wrong3: 間違い選択肢3
+        accuracy: 正答率
     errors:
       <<: *errors
     
