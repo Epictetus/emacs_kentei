@@ -1,13 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user_id: 1
-  problem_id: 1
-  choice: MyString
+  user: hanako
+  problem: el1
+  choice: (3 5 7 +)
   correct: false
 
 two:
-  user_id: 1
-  problem_id: 1
-  choice: MyString
+  user: hanako
+  problem: el2
+  choice: (defun foo (arg) ...)
+  correct: true
+
+three:
+  user: hanako
+  problem: el3
+  choice: (quote 3 5 7)
   correct: false
+
+four:
+  user: hanako
+  problem: config
+  choice: ~/.emacs.d/start.el
+  correct: false
+
+five:
+  user: tarou
+  problem: config
+  choice: ~/.emacs.d/init.el
+  correct: true

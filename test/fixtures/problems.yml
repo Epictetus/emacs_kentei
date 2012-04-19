@@ -1,6 +1,46 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-<% 1.upto(100) do |i| %>
+config:
+  id: 1
+  title: 設定ファイル
+  description: 次のうち、設定を書いたときに、起動時に読みこまれるようになるファイルを選びなさい。
+  correct: ~/.emacs.d/init.el
+  wrong1: ~/.emacs.d/config/init.el
+  wrong2: ~/.emacs.d/initialize.el
+  wrong3: ~/.emacs.d/start.el
+  creator: hoge
+
+el1:
+  id: 2
+  title: emacs lisp の基礎(1)
+  description: emacs lisp で 3 + 5 + 7 を実行する式を選びなさい。
+  correct: (+ 3 5 7)
+  wrong1: (3 + 5 + 7)
+  wrong2: (3 5 7 +)
+  wrong3: (+ (3 5 7))
+  creator: piyo
+
+el2:
+  id: 3
+  title: emacs lisp の基礎(2)
+  description: emacs lisp で arg 引数を持つ foo 関数を定義する方法として、最も適切なものを選びなさい。
+  correct: (defun foo (arg) ...)
+  wrong1: (defun (foo arg) ...)
+  wrong2: (define (foo arg) ...)
+  wrong3: (define foo (arg) ...)
+  creator: hoge
+
+el3:
+  id: 4
+  title: emacs lisp の基礎(3)
+  description: リストを式のなかに書く表記法として、最も適切なものを選びなさい。
+  correct: \'(3 5 7)
+  wrong1: (3 5 7)
+  wrong2: (quote 3 5 7)
+  wrong3: ((3 5 7))
+  creator: hoge
+
+<% 100.upto(200) do |i| %>
 problem_<%= i %>:
   id: <%= i %>
   title: Problem <%= i %>

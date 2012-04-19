@@ -1,13 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
+<% %w(hoge huga piyo tarou hanako mitio).each do |name| %>
+<%= name %>:
+  name: <%= name %>
   uid: MyString
   key: MyString
   secret: MyString
+<% end %>
 
-two:
-  name: MyString
+<% 100.upto(200) do |i| %>
+user_<%= i %>:
+  name: user_<%= i %>
   uid: MyString
   key: MyString
   secret: MyString
+<% end %>
