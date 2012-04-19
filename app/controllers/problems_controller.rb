@@ -25,6 +25,19 @@ class ProblemsController < ApplicationController
     end
   end
 
+  # POST /problems/answer/1
+  # POST /problems/answer/1.json
+  def answer
+    @problem = Problem.find(params[:id])
+
+    @problem.answer_by(current_user, params[:choice])
+
+    respond_to do |format|
+      format.html { redirect_to @problem, notice: 'Answered' }
+      format.json { render json: @problem, status: :answered, location: @problem }
+    end
+  end
+
   # GET /problems/new
   # GET /problems/new.json
   def new

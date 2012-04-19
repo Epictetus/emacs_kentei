@@ -1,11 +1,28 @@
 <%- model_class = @problem.class -%>
 <h1><%= @problem.title %></h1>
 
-<p>by. <%= link_to @problem.creator %></p>
+<p>by. <%= link_to @problem.creator, user_path(@problem.creator) %></p>
+
+<p><%= @problem.solvers.count %> 人が解き、<%= @problem.answers.where(correct: true).count %> 人が正解しました。</p>
 
 <p>
   <%= @problem.description %>
 </p>
+
+<% if @problem.solvers.include? current_user %>
+  <% answer = @problem.myanswer(current_user) %>
+  <div class="alert <%= answer.correct? ? 'alert-success' : 'alert-error' %>">
+    あなたの回答: <strong><%= answer.choice %></strong><br />
+    正解: <strong><%= @problem.correct %></strong>
+  </div>
+<% else %>
+  <%= form_tag(action: 'answer') do %>
+    <% @problem.random_choices.each do |c| %>
+      <label class="radio"><%= radio_button_tag 'choice', c, false, class: 'choice' %><%= c %></label>
+    <% end %>
+    <%= submit_tag "回答", class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
