@@ -1,3 +1,23 @@
-<h1>Emacs 検定</h1>
-<p><%= link_to 'Vim検定', "http://www.infiniteloop.co.jp/vim/" %>にインスパイアされて作りました。</p>
-<p>ソースコード公開中: <%= link_to 'Fork me on Github!', "https://github.com/tomykaira/emacs_kentei" %></p>
+<div class="hero-unit">
+  <h1>Emacs 検定</h1>
+  <p>Emacs 検定は、すべての Emacs ユーザが互いに問題を出しあい、高めあう、オープンな最高のフィールドです。</p>
+  <p><a href="/auth/twitter" class="btn btn-primary btn-large">Twitter でログイン »</a></p>
+</div>
+
+<div class="row">
+  <div class="span4">
+    <h2>問題を解く</h2>
+    <%= link_to image_tag("problems.jpg"), problems_path %>
+    <p>Emacs 検定では、他のユーザが作った問題を解くことで、あなたの Emacs 力を高めることができます。周囲の Vim ユーザに「えー Emacs これできんの?」と馬鹿にされたことはありませんか?知識を付けて宗教戦争を制しましょう。</p>
+  </div>
+  <div class="span4">
+    <h2>問題を作る</h2>
+    <%= image_tag "create.jpg" %>
+    <p>Emacs は奥深い世界です。Vimmer は<%= link_to 'Vim 検定', "http://www.infiniteloop.co.jp/vim/" %>というもので知識を広めているようですが、これは問題を自由に作れるわけではありません。学んだ知識をシェアして、他の Emacs ユーザを支援しましょう。</p>
+  </div>
+  <div class="span4">
+    <h2>Fork me on Github!</h2>
+    <%= link_to image_tag("github.png"), "https://github.com/tomykaira/emacs_kentei" %>
+    <p>本プロジェクトのソースコードはすべて github 上でシェアされています。プロジェクトは発展途上なので、いろいろな機能追加を募集しています。こんな機能が欲しい、という提案も、Issue から御気軽にどうそ。</p>
+  </div>
+</div>
