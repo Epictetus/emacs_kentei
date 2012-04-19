@@ -11,7 +11,7 @@
     <td><%= link_to problem.title, problem %></td>
     <td><%= problem.description[0..50] %></td>
     <td><%= decorate_accuracy(problem.accuracy).html_safe %></td>
-    <td><% if current_user.solved?(problem)%>
+    <td><% if current_user.try(:solved?, problem)%>
           <% if problem.myanswer(current_user).correct? %>
             <i class="icon-ok"></i>
           <% else %>

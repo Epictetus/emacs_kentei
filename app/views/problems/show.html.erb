@@ -9,19 +9,25 @@
   <%= @problem.description %>
 </p>
 
-<% if @problem.solvers.include? current_user %>
-  <% answer = @problem.myanswer(current_user) %>
-  <div class="alert <%= answer.correct? ? 'alert-success' : 'alert-error' %>">
-    あなたの回答: <strong><%= answer.choice %></strong><br />
-    正解: <strong><%= @problem.correct %></strong>
-  </div>
-<% else %>
-  <%= form_tag(action: 'answer') do %>
-    <% @problem.random_choices.each do |c| %>
-      <label class="radio"><%= radio_button_tag 'choice', c, false, class: 'choice' %><%= c %></label>
+<% if current_user %>
+  <% if @problem.solvers.include? current_user %>
+    <% answer = @problem.myanswer(current_user) %>
+    <div class="alert <%= answer.correct? ? 'alert-success' : 'alert-error' %>">
+      あなたの回答: <strong><%= answer.choice %></strong><br />
+      正解: <strong><%= @problem.correct %></strong>
+    </div>
+  <% else %>
+    <%= form_tag(action: 'answer') do %>
+      <% @problem.random_choices.each do |c| %>
+        <label class="radio"><%= radio_button_tag 'choice', c, false, class: 'choice' %><%= c %></label>
+      <% end %>
+      <%= submit_tag "回答", class: 'btn btn-primary' %>
     <% end %>
-    <%= submit_tag "回答", class: 'btn btn-primary' %>
   <% end %>
+<% else %>
+  <div class="alert alert-warning">
+    問題に回答するには、<%= link_to 'twitter アカウントでログイン', '/auth/twitter' %>する必要があります。
+  </div>
 <% end %>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class ProblemsController < ApplicationController
 
-  before_filter :require_login, only: [:new, :create]
+  before_filter :require_login, only: [:new, :create, :answer]
 
   # GET /problems
   # GET /problems.json
