@@ -13,11 +13,11 @@ class User < ActiveRecord::Base
   end
 
   def self.most_solved(limit = 10)
-    User.all(select: "#{User.table_name}.*, COUNT(#{Answer.table_name}.id) number_of_answers", joins: :answers, order: "number_of_answers", limit: limit)
+    User.all(select: "#{User.table_name}.*, COUNT(#{Answer.table_name}.id) number_of_answers", joins: :answers, order: "number_of_answers DESC", limit: limit, group: :id)
   end
 
   def self.most_created(limit = 10)
-    User.all(select: "#{User.table_name}.*, COUNT(#{Problem.table_name}.id) number_of_problems", joins: :problems, order: "number_of_problems", limit: limit)
+    User.all(select: "#{User.table_name}.*, COUNT(#{Problem.table_name}.id) number_of_problems", joins: :problems, order: "number_of_problems DESC", limit: limit, group: :id)
   end
 
   def to_s
