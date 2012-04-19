@@ -31,8 +31,9 @@
           <a class="brand" href="/">Emacs 検定</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "問題一覧", controller: 'problems' %></li>
-              <li><%= link_to "ランキング", controller: 'users', action: 'ranking' %></li>
+              <li><%= link_to "問題一覧", problems_path %></li>
+              <li><%= link_to "問題作成", new_problem_path if current_user %></li>
+              <li><%= link_to "ランキング", users_path %></li>
             </ul>
             <p class="navbar-text pull-right">
               <% if current_user %>
