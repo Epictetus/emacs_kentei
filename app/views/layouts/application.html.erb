@@ -36,10 +36,10 @@
             </ul>
             <p class="navbar-text pull-right">
               <% if current_user %>
-                Welcome <%= link_to current_user, current_user %>!&nbsp;
-                <%= link_to "Sign Out", signout_path %>
+                ようこそ <%= link_to current_user, current_user %> さん!&nbsp;
+                <%= link_to "ログアウト", signout_path %>
               <% else %>
-                <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+                <%= link_to "Twitter でログイン", "/auth/twitter" %>
               <% end %>
             </p>
           </div><!--/.nav-collapse -->
