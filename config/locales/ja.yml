@@ -219,4 +219,7 @@ ja:
         name: 名前
     errors:
       <<: *errors
+  will_paginate:
+    previous_label: 前
+    next_label: 次
     
