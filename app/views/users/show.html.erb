@@ -1,6 +1,5 @@
 <% content_for :title, "#{@user.name} さん" %>
-<h1><%= @user.name %> さんのページ</h1>
-<%= link_to 'Twitter', "https://twitter.com/#!/#{@user.name}" %>
+<h1><%= link_to @user.name, @user.twitter_url %> さんのページ</h1>
 <h2>正答率: <%= decorate_accuracy(@user.accuracy).html_safe %></h2>
 <h2>解いた問題</h2>
 <%= @problems = @user.answered_problems; render partial: 'problems/list' %>

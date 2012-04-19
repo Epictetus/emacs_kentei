@@ -31,15 +31,16 @@
           <a class="brand" href="/">Emacs 検定</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "問題一覧", controller: 'problems' %></li>
-              <li><%= link_to "ランキング", controller: 'users', action: 'ranking' %></li>
+              <li><%= link_to "問題一覧", problems_path %></li>
+              <li><%= link_to "問題作成", new_problem_path if current_user %></li>
+              <li><%= link_to "ランキング", users_path %></li>
             </ul>
             <p class="navbar-text pull-right">
               <% if current_user %>
-                Welcome <%= link_to current_user, current_user %>!&nbsp;
-                <%= link_to "Sign Out", signout_path %>
+                ようこそ <%= link_to current_user, current_user %> さん!&nbsp;
+                <%= link_to "ログアウト", signout_path %>
               <% else %>
-                <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+                <%= link_to "Twitter でログイン", "/auth/twitter" %>
               <% end %>
             </p>
           </div><!--/.nav-collapse -->

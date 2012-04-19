@@ -131,6 +131,16 @@ ja:
       create: 登録する
       submit: 保存する
       update: 更新する
+    links:
+      cancel: キャンセル
+      back: 一覧に戻る
+    titles:
+      new: %{model}の新規作成
+    action:
+      logout: ログアウトしました
+      login: ログインしました
+      not_logged_in: ログインしてください
+      create_problem: 問題を作成しました
   number:
     currency:
       format:
@@ -193,5 +203,18 @@ ja:
     errors:
       <<: *errors
   activerecord:
+    models:
+      problem: 問題
+    # http://stackoverflow.com/questions/3516478/rails-i18n-and-yml-structure-for-form-labels
+    attributes:
+      problem:
+        title: タイトル
+        description: 問題文
+        correct: 正解選択肢
+        wrong1: 間違い選択肢1
+        wrong2: 間違い選択肢2
+        wrong3: 間違い選択肢3
+        accuracy: 正答率
     errors:
       <<: *errors
+    

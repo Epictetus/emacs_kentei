@@ -12,6 +12,6 @@ module ProblemsHelper
             else
               "#228a39"
             end
-    %Q{<span style="color: #{color}">#{ acc }</span>}
+    %Q{<span style="color: #{color}">#{ "%.1f" % acc }</span>}
   end
 end

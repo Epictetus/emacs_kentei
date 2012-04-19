@@ -27,4 +27,8 @@ class User < ActiveRecord::Base
   def solved?(problem)
     answered_problems.include? problem
   end
+
+  def twitter_url
+    "https://twitter.com/#!/#{name}"
+  end
 end
