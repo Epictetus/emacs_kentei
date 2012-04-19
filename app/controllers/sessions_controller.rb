@@ -11,12 +11,12 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :notice => "Signed out!"
+    redirect_to root_url, :notice => t('helpers.action.logout')
   end
 
   private
   def login_and_redirect_to(user, page)
     session[:user_id] = user.id
-    redirect_to page, :notice => "Signed in!"
+    redirect_to page, :notice => t('helpers.action.login')
   end
 end

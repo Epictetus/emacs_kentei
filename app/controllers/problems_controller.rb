@@ -33,7 +33,7 @@ class ProblemsController < ApplicationController
     @problem.answer_by(current_user, params[:choice])
 
     respond_to do |format|
-      format.html { redirect_to @problem, notice: 'Answered' }
+      format.html { redirect_to @problem }
       format.json { render json: @problem, status: :answered, location: @problem }
     end
   end
@@ -57,7 +57,7 @@ class ProblemsController < ApplicationController
 
     respond_to do |format|
       if @problem.save
-        format.html { redirect_to @problem, notice: 'Problem was successfully created.' }
+        format.html { redirect_to @problem, notice: t('helpers.action.create_problem') }
         format.json { render json: @problem, status: :created, location: @problem }
       else
         format.html { render action: "new" }
@@ -68,6 +68,6 @@ class ProblemsController < ApplicationController
 
   private
   def require_login
-    redirect_to '/', notice: "ログインしてください" unless current_user
+    redirect_to '/', notice: t('helpers.action.not_logged_in') unless current_user
   end
 end

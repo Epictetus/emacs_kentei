@@ -133,9 +133,14 @@ ja:
       update: 更新する
     links:
       cancel: キャンセル
-      back: 戻る
+      back: 一覧に戻る
     titles:
       new: %{model}の新規作成
+    action:
+      logout: ログアウトしました
+      login: ログインしました
+      not_logged_in: ログインしてください
+      create_problem: 問題を作成しました
   number:
     currency:
       format:
