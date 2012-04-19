@@ -23,4 +23,8 @@ class User < ActiveRecord::Base
       0.0
     end
   end
+
+  def solved?(problem)
+    answered_problems.include? problem
+  end
 end
