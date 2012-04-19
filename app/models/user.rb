@@ -12,6 +12,14 @@ class User < ActiveRecord::Base
     create!(uid: auth["uid"], name: auth["info"]["nickname"], key: auth.credentials.token, secret: auth.credentials.secret)
   end
 
+  def self.most_solved(limit = 10)
+    User.all(select: "#{User.table_name}.*, COUNT(#{Answer.table_name}.id) number_of_answers", joins: :answers, order: "number_of_answers", limit: limit)
+  end
+
+  def self.most_created(limit = 10)
+    User.all(select: "#{User.table_name}.*, COUNT(#{Problem.table_name}.id) number_of_problems", joins: :problems, order: "number_of_problems", limit: limit)
+  end
+
   def to_s
     name
   end

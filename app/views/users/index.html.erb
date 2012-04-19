@@ -1,2 +1,31 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>ユーザランキング</h1>
+<h2>回答数</h2>
+<table class="table table-bordered table-striped problems">
+  <tr>
+    <th style="width: 30%"><%= User.human_attribute_name(:name) %></th>
+    <th>回答数</th>
+    <th style="white-space:nowrap;"><%= Problem.human_attribute_name(:accuracy) %></th>
+  </tr>
+
+<% @users_solve.each do |u| %>
+  <tr>
+    <td><%= link_to u, u%></td>
+    <td><%= u.answers.count %></td>
+    <td><%= decorate_accuracy(u.accuracy).html_safe %></td>
+  </tr>
+<% end %>
+</table>
+<h2>問題作成数</h2>
+<table class="table table-bordered table-striped problems">
+  <tr>
+    <th style="width: 30%"><%= User.human_attribute_name(:name) %></th>
+    <th>問題作成数</th>
+  </tr>
+
+<% @users_problem.each do |u| %>
+  <tr>
+    <td><%= link_to u, u%></td>
+    <td><%= u.problems.count %></td>
+  </tr>
+<% end %>
+</table>

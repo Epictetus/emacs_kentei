@@ -215,6 +215,8 @@ ja:
         wrong2: 間違い選択肢2
         wrong3: 間違い選択肢3
         accuracy: 正答率
+      user:
+        name: 名前
     errors:
       <<: *errors
     
